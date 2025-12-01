@@ -462,7 +462,7 @@ a:focus {
 	width: 48px;
 	height: 48px;
 	object-fit: contain;
-	filter: brightness(0) invert(1);
+	border-radius: 50px;
 }
 
 .creator-card h4 {
