@@ -22,7 +22,7 @@
 				<div class="logo-section">
 					<a href="index.html"
 						><img
-							src="img/logo.svg"
+							src="img/logo/output-onlinegiftools.gif"
 							alt="Venus Free Fire logo"
 					/></a>
 				</div>
@@ -122,10 +122,97 @@
 			</section>
 		</main>
 
-		<footer class="site-footer">
-			<div class="container">
-				© Venus Free Fire - Professional Esports Hub
+		<!-- Terms and Conditions Section -->
+		<section
+			class="content-section"
+			id="terms-section">
+			<h3>Terms and Conditions</h3>
+			<div
+				class="terms-box"
+				style="
+					max-height: 220px;
+					overflow-y: auto;
+					background: rgba(15, 23, 36, 0.12);
+					padding: 16px;
+					border-radius: 8px;
+					margin-bottom: 12px;
+				">
+				<ol style="font-size: 15px; line-height: 1.7; color: #9aa4b2">
+					<li>
+						All digital services are provided as described. Please
+						read the service details carefully before purchasing.
+					</li>
+					<li>
+						Payments are non-refundable once the service has
+						commenced or been delivered.
+					</li>
+					<li>
+						Any misuse, abuse, or violation of our community
+						guidelines may result in service termination without
+						refund.
+					</li>
+					<li>
+						We reserve the right to refuse service to anyone for any
+						reason at any time.
+					</li>
+					<li>
+						By purchasing, you agree to provide accurate information
+						and cooperate with our team for service delivery.
+					</li>
+					<li>
+						All personal data will be handled according to our
+						privacy policy and will not be shared with third
+						parties.
+					</li>
+					<li>
+						For tournament or scrim services, participants must
+						follow all rules and instructions provided by our staff.
+					</li>
+					<li>
+						Support is available for technical issues related to the
+						purchased service only.
+					</li>
+					<li>
+						By proceeding, you acknowledge and accept all the above
+						terms and conditions.
+					</li>
+				</ol>
 			</div>
-		</footer>
+			<div style="margin-bottom: 16px">
+				<label
+					style="
+						font-size: 16px;
+						display: flex;
+						align-items: center;
+						gap: 8px;
+					">
+					<input
+						type="checkbox"
+						id="acceptTerms"
+						style="width: 18px; height: 18px" />
+					I have read and accept the Terms and Conditions
+				</label>
+			</div>
+			<button
+				id="buyServiceBtn"
+				class="btn"
+				style="width: 100%; max-width: 320px; font-size: 18px"
+				disabled>
+				Buy Digital Service
+			</button>
+		</section>
+		<script>
+			const termsCheckbox = document.getElementById("acceptTerms");
+			const buyBtn = document.getElementById("buyServiceBtn");
+			termsCheckbox.addEventListener("change", function () {
+				buyBtn.disabled = !this.checked;
+			});
+			buyBtn.addEventListener("click", function () {
+				window.open(
+					"https://docs.google.com/forms/d/e/1FAIpQLScI7K4EDThS_LLtPar8OSB0bVgRtU4NUzUi5ktPp6VnZXHd4w/viewform?usp=dialog",
+					"_blank"
+				);
+			});
+		</script>
 	</body>
 </html>
