@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="flameBg" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#FF6B1A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF1744;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Flame circle background -->
+  <circle cx="100" cy="100" r="95" fill="url(#flameBg)" opacity="0.9"/>
+  
+  <!-- Dark inner circle -->
+  <circle cx="100" cy="100" r="85" fill="#0a0a0a"/>
+  
+  <!-- Arrow pointing right (V shape) -->
+  <g stroke="white" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left arrow line -->
+    <line x1="60" y1="75" x2="100" y2="110"/>
+    <!-- Right arrow line -->
+    <line x1="100" y1="110" x2="140" y2="75"/>
+  </g>
+  
+  <!-- Center flame circle -->
+  <circle cx="100" cy="80" r="18" fill="#FF6B1A" opacity="0.9"/>
+  <circle cx="100" cy="78" r="14" fill="#FFD700" opacity="0.8"/>
+  
+  <!-- Red accent lines (flame effect) -->
+  <g stroke="#FF1744" stroke-width="3" stroke-linecap="round" opacity="0.8">
+    <path d="M 75 85 Q 85 75 100 70"/>
+    <path d="M 125 85 Q 115 75 100 70"/>
+    <path d="M 85 95 L 80 110"/>
+    <path d="M 115 95 L 120 110"/>
+  </g>
+  
+  <!-- Green accent at bottom -->
+  <line x1="92" y1="120" x2="108" y2="125" stroke="#00FF00" stroke-width="2" opacity="0.7" stroke-linecap="round"/>
+  
+  <!-- VENUS text -->
+  <text x="100" y="155" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FF1744" text-anchor="middle">VENUS</text>
+  
+  <!-- Signature-like mark -->
+  <text x="168" y="175" font-family="cursive" font-size="10" fill="#FFD700" opacity="0.8">Timeless</text>
+</svg>

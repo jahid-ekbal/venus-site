@@ -1,0 +1,390 @@
+:root {
+	/* Flame-themed palette (logo-derived) */
+	--bg-900: #060812;
+	--bg-800: #0b1622;
+	--card: #0f1724;
+	--flame-orange: #ff6b1a;
+	--flame-red: #ff1744;
+	--flame-yellow: #ffd700;
+	--muted: #9aa4b2;
+	--glass: rgba(255, 255, 255, 0.03);
+	--accent: linear-gradient(90deg, var(--flame-orange), var(--flame-red));
+	--max-width: 1080px;
+}
+
+/* Reset / base */
+* {
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: Inter, "Segoe UI", Helvetica, Arial;
+	color: #e9f3fb;
+	background: radial-gradient(
+			ellipse at 20% 10%,
+			rgba(255, 100, 20, 0.06) 0%,
+			transparent 20%
+		),
+		linear-gradient(180deg, var(--bg-900) 0%, var(--bg-800) 60%);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	/* custom flame cursor (SVG) */
+	cursor: url("../img/flame-cursor.svg") 16 16, auto;
+}
+
+.particles {
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	opacity: 0.65;
+	/* layered animated flame gradients - vibrant red and orange */
+	background-image: radial-gradient(
+			circle at 20% 10%,
+			rgba(255, 107, 26, 0.22) 0%,
+			rgba(255, 107, 26, 0.12) 30%,
+			transparent 60%
+		),
+		radial-gradient(
+			circle at 80% 80%,
+			rgba(255, 23, 68, 0.2) 0%,
+			rgba(255, 23, 68, 0.08) 40%,
+			transparent 70%
+		),
+		radial-gradient(
+			circle at 50% 50%,
+			rgba(255, 200, 20, 0.15) 0%,
+			transparent 50%
+		),
+		linear-gradient(
+			135deg,
+			rgba(255, 107, 26, 0.16),
+			rgba(255, 23, 68, 0.1)
+		);
+	background-size: 250% 250%, 200% 200%, 180% 180%, 150% 150%;
+	animation: flameMove 12s ease-in-out infinite;
+}
+
+@keyframes flameMove {
+	0% {
+		background-position: 0% 20%, 100% 80%, 50% 50%, 0% 0%;
+	}
+	25% {
+		background-position: 20% 30%, 70% 50%, 40% 60%, 25% 20%;
+	}
+	50% {
+		background-position: 50% 60%, 20% 40%, 70% 30%, 50% 50%;
+	}
+	75% {
+		background-position: 30% 50%, 60% 70%, 50% 80%, 40% 30%;
+	}
+	100% {
+		background-position: 0% 20%, 100% 80%, 50% 50%, 0% 0%;
+	}
+}
+
+.container {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 16px;
+}
+
+/* Header / nav - mobile first */
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 20;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+	backdrop-filter: blur(6px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+.site-header .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+.logo-section a {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+}
+.logo-section img {
+	height: 40px;
+	width: auto;
+	display: block;
+}
+
+.nav-toggle {
+	background: transparent;
+	border: 0;
+	color: var(--muted);
+	padding: 8px;
+	border-radius: 8px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.nav-toggle:focus {
+	outline: 3px solid rgba(255, 120, 40, 0.14);
+}
+.nav-toggle .bar {
+	display: block;
+	width: 20px;
+	height: 2px;
+	background: var(--muted);
+	border-radius: 2px;
+	position: relative;
+}
+.nav-toggle .bar:before,
+.nav-toggle .bar:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: var(--muted);
+	border-radius: 2px;
+}
+.nav-toggle .bar:before {
+	top: -6px;
+}
+.nav-toggle .bar:after {
+	top: 6px;
+}
+
+.main-nav {
+	display: none;
+	flex-direction: column;
+	width: 100%;
+	margin-top: 10px;
+}
+.main-nav a {
+	display: block;
+	padding: 10px 8px;
+	border-radius: 8px;
+	color: var(--muted);
+	text-decoration: none;
+}
+.main-nav a,
+.btn,
+button {
+	cursor: url("../img/flame-cursor.svg") 16 16, pointer;
+}
+.main-nav a:hover,
+.main-nav a:focus {
+	color: var(--flame-yellow);
+	background: rgba(255, 255, 255, 0.02);
+}
+
+/* Flame pointer trail */
+.flame-dot {
+	position: fixed;
+	pointer-events: none;
+	z-index: 5;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	transform: translate(-50%, -50%) scale(1);
+	background: radial-gradient(
+		circle at 30% 30%,
+		rgba(255, 244, 128, 0.95) 0%,
+		rgba(255, 107, 26, 0.85) 30%,
+		rgba(255, 23, 68, 0.6) 60%,
+		transparent 100%
+	);
+	mix-blend-mode: screen;
+	will-change: transform, opacity;
+	animation: flameTrail 900ms cubic-bezier(0.22, 0.9, 0.3, 1) forwards;
+}
+
+@keyframes flameTrail {
+	0% {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(0.8) translateY(0px);
+	}
+	30% {
+		opacity: 0.95;
+		transform: translate(-50%, -60%) scale(1.05) translateY(-6px);
+	}
+	60% {
+		opacity: 0.6;
+		transform: translate(-50%, -90%) scale(1.2) translateY(-18px);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(-50%, -140%) scale(1.45) translateY(-36px);
+	}
+}
+
+/* reduce motion: disable heavy animations */
+@media (prefers-reduced-motion: reduce) {
+	.flame-dot {
+		animation: none;
+		opacity: 0.9;
+	}
+}
+
+/* When nav open on mobile */
+body.nav-open .main-nav {
+	display: flex;
+}
+
+/* Cards and grids */
+.card-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 12px;
+	margin-top: 12px;
+}
+.card {
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+	padding: 12px;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.03);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+	transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+}
+
+.player-card {
+	display: block;
+}
+.player-row {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+.avatar {
+	flex: 0 0 48px;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	color: white;
+	background: linear-gradient(135deg, var(--flame-orange), var(--flame-red));
+	box-shadow: 0 6px 18px rgba(255, 80, 20, 0.08);
+}
+.avatar.large {
+	width: 96px;
+	height: 96px;
+	font-size: 28px;
+}
+.player-meta h4 {
+	margin: 0 0 4px 0;
+}
+.muted {
+	color: var(--muted);
+	font-size: 0.9rem;
+}
+
+.hero {
+	padding: 18px 0;
+}
+
+/* Profile */
+.profile-card {
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+	padding: 16px;
+	border-radius: 12px;
+}
+.profile-head {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+}
+.profile-meta h2 {
+	margin: 0;
+}
+.profile-bio {
+	margin-top: 12px;
+}
+
+/* Buttons */
+.btn {
+	display: inline-block;
+	background: var(--flame-orange);
+	background-image: var(--accent);
+	color: #fff;
+	padding: 8px 12px;
+	border-radius: 8px;
+	text-decoration: none;
+	border: 0;
+}
+.btn:focus {
+	outline: 3px solid rgba(255, 140, 60, 0.14);
+}
+
+/* Accessibility focus for links */
+a:focus {
+	outline: 3px solid rgba(255, 200, 80, 0.08);
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+	position: absolute;
+	left: 8px;
+	top: 8px;
+	background: rgba(0, 0, 0, 0.6);
+	color: var(--flame-yellow);
+	padding: 6px 10px;
+	border-radius: 6px;
+	z-index: 60;
+	transform: translateY(-120%);
+	transition: transform 0.18s ease;
+	text-decoration: none;
+	font-weight: 700;
+}
+.skip-link:focus {
+	transform: translateY(0);
+	outline: 3px solid rgba(255, 140, 60, 0.16);
+}
+
+/* Larger screens */
+@media (min-width: 700px) {
+	.nav-toggle {
+		display: none;
+	}
+	.main-nav {
+		display: flex;
+		flex-direction: row;
+		gap: 8px;
+		width: auto;
+		margin-top: 0;
+	}
+	.main-nav a {
+		display: inline-block;
+		padding: 8px 10px;
+	}
+	.card-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 1100px) {
+	.card-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* Minor responsiveness tweaks for very small devices */
+@media (max-width: 360px) {
+	.container {
+		padding: 12px;
+	}
+	.avatar {
+		width: 44px;
+		height: 44px;
+	}
+}
