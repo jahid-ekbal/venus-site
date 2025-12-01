@@ -15,7 +15,7 @@ How to run locally
 2. Run:
 
 ```cmd
-cd C:\Users\JAHID\Desktop\venus-site
+cd C:\Users\username\folder name\venus-site
 python -m http.server 8000
 ```
 
