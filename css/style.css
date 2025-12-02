@@ -390,10 +390,41 @@ body.nav-open .main-nav {
 	background: linear-gradient(135deg, var(--flame-orange), var(--flame-red));
 	box-shadow: 0 6px 18px rgba(255, 80, 20, 0.08);
 }
+.avatar-wrap {
+	position: relative;
+	display: inline-block;
+}
+.discord-status {
+	position: absolute;
+	right: -4px;
+	bottom: -4px;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: #58666c; /* default offline grey */
+	border: 2px solid rgba(15, 23, 36, 0.6);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+	transition: background 160ms ease, box-shadow 160ms ease,
+		transform 160ms ease;
+}
+.discord-status.online {
+	background: #57f287; /* green similar to Discord */
+	box-shadow: 0 0 8px rgba(87, 242, 135, 0.6);
+	transform: scale(1.05);
+}
 .avatar.large {
 	width: 96px;
 	height: 96px;
 	font-size: 28px;
+}
+
+.avatar-img {
+	display: inline-block;
+	width: 96px;
+	height: 96px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 2px solid rgba(255, 255, 255, 0.04);
 }
 .player-meta h4 {
 	margin: 0 0 4px 0;
