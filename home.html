@@ -41,6 +41,21 @@
 					<span class="bar"></span>
 				</button>
 
+				<!-- Profile area: shows avatar when logged in, links to Discord auth when not -->
+				<div class="profile-area">
+					<a
+						id="profileBtn"
+						href="/auth/discord"
+						class="profile-link"
+						title="Sign in with Discord">
+						<img
+							id="profileAvatar"
+							class="nav-avatar"
+							src="img/logo.svg"
+							alt="Profile" />
+					</a>
+				</div>
+
 				<nav
 					class="main-nav"
 					aria-label="Main navigation">
@@ -56,9 +71,7 @@
 		</header>
 		<section class="hero">
 			<h2>Welcome to Venus</h2>
-			<p>
-				Your one-stop destination for all things Venus.
-			</p>
+			<p>Your one-stop destination for all things Venus.</p>
 		</section>
 		<main
 			id="main"

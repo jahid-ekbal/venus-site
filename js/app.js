@@ -396,6 +396,36 @@ function escapeHtml(s) {
 	);
 }
 
+// Initialize profile button: queries /api/me to determine login state and show avatar
+async function initProfileButton() {
+	const btn = document.getElementById("profileBtn");
+	const avatar = document.getElementById("profileAvatar");
+	if (!btn || !avatar) return;
+	try {
+		const res = await fetch("/api/me", { credentials: "include" });
+		if (res.ok) {
+			const user = await res.json();
+			if (user && user.id && user.avatar) {
+				avatar.src = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=64`;
+			} else if (user && user.id) {
+				// fallback to default logo when user has no custom avatar
+				avatar.src = "img/logo/output-onlinegiftools.gif";
+			}
+			btn.href = "/profile.html";
+			btn.title = `Signed in as ${user.username || user.id}`;
+		} else {
+			// not authenticated
+			btn.href = "/auth/discord";
+			btn.title = "Sign in with Discord";
+			avatar.src = "img/logo/output-onlinegiftools.gif";
+		}
+	} catch (e) {
+		btn.href = "/auth/discord";
+		btn.title = "Sign in with Discord";
+		avatar.src = "img/logo/output-onlinegiftools.gif";
+	}
+}
+
 // Auto-run renderers when appropriate
 document.addEventListener("DOMContentLoaded", () => {
 	// guilds page has container with id 'guildsGrid'
@@ -406,6 +436,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	markDiscordOnlinePlayers("3R9C7pMCFA");
 	// profile page container id 'playerProfile'
 	renderPlayerProfileFromQuery();
+
+	// initialize navbar profile button (will attempt to call /api/me)
+	initProfileButton();
 
 	// Nav toggle for mobile - support multiple toggles and accessible behaviors
 	(function initNavToggle() {
