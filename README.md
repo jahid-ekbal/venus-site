@@ -1,33 +1,59 @@
 # Venus Free Fire - Static Site
 
-This is a static HTML/CSS/JS demo site for a Free Fire esports organization.
+# Venus - Static Site
 
-Features
+A small static website for VENUS — an esports organization. This repository contains the site pages, styles, and a tiny client-side script.
 
--   Responsive, mobile-first design
--   Flame-themed branding and animated flame pointer trail
--   Guild players list with per-player profiles (client-side rendered)
--   Accessible nav with keyboard skip-link and focus states
+**Pages**
 
-How to run locally
+- [index.html](index.html) — landing / entry
+- [home.html](home.html) — home overview
+- [overview.html](overview.html) — ORGANIZATION OVERVIEW (updated)
+- [player.html](player.html) — player profiles
+- [esports.html](esports.html) — esports teams & squads
 
-1. Open cmd.exe
-2. Run:
 
-```cmd
-cd C:\Users\username\folder name\venus-site
-python -m http.server 8000
+- [digital-services.html](digital-services.html) — services offered
+- [creators.html](creators.html) — creators & media
+- [guilds.html](guilds.html) — guild information
+- [tryouts.html](tryouts.html) — tryout details
+
+## What I updated
+
+- `overview.html`: Replaced the main content with an animated, colorful overview section (animated gradient text and emoji accents). Linked a new `css/overview.css` file for animations.
+- `css/overview.css`: New file providing gradient text animation and emoji effects.
+- `README.md`: This updated project summary and instructions for adding commit history.
+
+## Commit history (how to add it here)
+
+I couldn't run `git` in the current environment to grab commits automatically. To produce a compact commit list you can paste into this README, run this locally from the repo root:
+
+```bash
+git --no-pager log --pretty=format:"%h | %ad | %s | %an" --date=short -n 200 > commits.txt
 ```
 
-3. Open http://localhost:8000/ in your browser.
+Then copy the contents of `commits.txt` and paste them under a "Commits" heading below.
 
-Notes
+Example placeholder:
 
--   The flame pointer animation respects `prefers-reduced-motion`.
--   Player data is stored in `js/app.js` (client-side) for demo purposes.
+```
+<commit-hash> | <date> | <message> | <author>
+... paste your commit lines here ...
+```
 
-Next steps you might want
+## Viewing locally
 
--   Replace avatar initials with real images in `img/players/` and update `js/app.js` to use them.
--   Add server-side registration or persistent storage if needed.
--   Provide a Figma/PSD for pixel-perfect matching; I can tune typography and spacing to match.
+Start a simple static server and open your browser:
+
+```powershell
+cd "C:\Users\JAHID\Documents\GitHub\venus-site"
+python -m http.server 8000
+# then open http://localhost:8000/
+```
+
+## Notes
+
+- The overview page uses `css/overview.css` for animated gradient text and emoji animations. The site respects `prefers-reduced-motion` where possible.
+- Player data is in `js/app.js` for demo purposes.
+
+If you'd like, I can: run local style tweaks, add manager/squad tables to the overview page, or insert real commit output if you run the `git` command and paste results here.
