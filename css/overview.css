@@ -1,0 +1,103 @@
+:root {
+  --og-gradient-1: #ff6b1a;
+  --og-gradient-2: #ff1744;
+  --og-gradient-3: #ffd700;
+}
+.overview-hero {
+  padding: 28px 16px;
+  margin-top: 24px;
+  display: block;
+  text-align: left;
+  z-index: 5;
+}
+.animated-gradient {
+  font-size: 2.1rem;
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    var(--og-gradient-1),
+    var(--og-gradient-2),
+    var(--og-gradient-3)
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
+  margin: 0 0 12px 0;
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.emoji {
+  display: inline-block;
+  margin-left: 6px;
+}
+.emoji-bounce {
+  animation: bounce 1.2s infinite ease-in-out;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.emoji-spin {
+  display: inline-block;
+  animation: spin 4s linear infinite;
+  font-size: 1.05em;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.overview-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 107, 26, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  max-width: 980px;
+}
+.bullet-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 8px 0 0 0;
+}
+.bullet-list li {
+  padding: 6px 0;
+  font-size: 1rem;
+}
+.leadership-block {
+  margin: 8px 0;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+}
+@media (max-width: 640px) {
+  .animated-gradient {
+    font-size: 1.45rem;
+  }
+  .overview-card {
+    padding: 14px;
+  }
+}
