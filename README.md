@@ -11,6 +11,8 @@ A small static website for VENUS — an esports organization. This repository co
 - [overview.html](overview.html) — ORGANIZATION OVERVIEW (updated)
 - [player.html](player.html) — player profiles
 - [esports.html](esports.html) — esports teams & squads
+
+
 - [digital-services.html](digital-services.html) — services offered
 - [creators.html](creators.html) — creators & media
 - [guilds.html](guilds.html) — guild information
