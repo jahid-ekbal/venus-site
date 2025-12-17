@@ -1,163 +1,263 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta
-			name="viewport"
-			content="width=device-width,initial-scale=1" />
-		<title>Home - Venus Free Fire</title>
-		<link
-			rel="stylesheet"
-			href="css/style.css" />
-	</head>
-	<body>
-		<a
-			class="skip-link"
-			href="#main"
-			>Skip to content</a
-		>
-		<div class="particles"></div>
-		<header class="site-header">
-			<div class="navbar-container">
-				<div class="logo-section">
-					<a
-						href="index.html"
-						class="logo-link">
-						<img
-							src="img/logo/output-onlinegiftools.gif"
-							alt="Venus Free Fire logo"
-							class="logo-img" />
-						<span class="logo-text">VENUS</span>
-					</a>
-				</div>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self' https://discord.com https://api.github.com; frame-ancestors 'none'; base-uri 'self';" />
+    <title>Home - Venus Free Fire</title>
+    <link
+      rel="stylesheet"
+      href="css/style.css" />
+  </head>
+  <body>
+    <a
+      class="skip-link"
+      href="#main"
+      >Skip to content</a
+    >
+    <div class="particles"></div>
+    <header class="site-header">
+      <div class="navbar-container">
+        <div class="logo-section">
+          <a
+            href="index.html"
+            class="logo-link">
+            <img
+              src="img/logo/output-onlinegiftools.gif"
+              alt="Venus Free Fire logo"
+              class="logo-img" />
+            <span class="logo-text">VENUS</span>
+          </a>
+        </div>
 
-				<nav
-					class="main-nav"
-					aria-label="Main navigation">
-					<a
-						href="index.html"
-						class="nav-link">
-						<span class="nav-icon">🏠</span>
-						<span class="nav-label">Home</span>
-					</a>
-					<a
-						href="overview.html"
-						class="nav-link">
-						<span class="nav-icon">📊</span>
-						<span class="nav-label">Overview</span>
-					</a>
-					<a
-						href="esports.html"
-						class="nav-link">
-						<span class="nav-icon">🎮</span>
-						<span class="nav-label">Esports</span>
-					</a>
-					<a
-						href="tryouts.html"
-						class="nav-link">
-						<span class="nav-icon">🎯</span>
-						<span class="nav-label">Tryouts</span>
-					</a>
-					<a
-						href="digital-services.html"
-						class="nav-link">
-						<span class="nav-icon">⚙️</span>
-						<span class="nav-label">Services</span>
-					</a>
-					<a
-						href="creators.html"
-						class="nav-link">
-						<span class="nav-icon">🎬</span>
-						<span class="nav-label">Creators</span>
-					</a>
-					<a
-						href="guilds.html"
-						class="nav-link">
-						<span class="nav-icon">👥</span>
-						<span class="nav-label">Guild</span>
-					</a>
-				</nav>
+        <nav
+          class="main-nav"
+          aria-label="Main navigation">
+          <a
+            href="index.html"
+            class="nav-link">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+          </a>
+          <a
+            href="overview.html"
+            class="nav-link">
+            <span class="nav-icon">📊</span>
+            <span class="nav-label">Overview</span>
+          </a>
+          <a
+            href="esports.html"
+            class="nav-link">
+            <span class="nav-icon">🎮</span>
+            <span class="nav-label">Esports</span>
+          </a>
+          <a
+            href="tryouts.html"
+            class="nav-link">
+            <span class="nav-icon">🎯</span>
+            <span class="nav-label">Tryouts</span>
+          </a>
+          <a
+            href="digital-services.html"
+            class="nav-link">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-label">Services</span>
+          </a>
+          <a
+            href="creators.html"
+            class="nav-link">
+            <span class="nav-icon">🎬</span>
+            <span class="nav-label">Creators</span>
+          </a>
+          <a
+            href="guilds.html"
+            class="nav-link">
+            <span class="nav-icon">👥</span>
+            <span class="nav-label">Guild</span>
+          </a>
+        </nav>
 
-				<button
-					id="navToggle"
-					class="nav-toggle"
-					aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="hamburger"></span>
-				</button>
+        <button
+          id="navToggle"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+        </button>
 
-				<!-- Profile area: shows avatar when logged in, links to Discord auth when not -->
-				<div class="profile-area">
-					<a
-						id="profileBtn"
-						href="/auth/discord"
-						class="profile-link"
-						title="Sign in with Discord">
-						<img
-							id="profileAvatar"
-							class="nav-avatar"
-							src="img/logo/output-onlinegiftools.gif"
-							alt="Profile" />
-					</a>
-				</div>
-			</div>
-		</header>
+        <!-- Profile area: shows avatar when logged in, links to Discord auth when not -->
+        <div class="profile-area">
+          <a
+            id="profileBtn"
+            href="/auth/discord"
+            class="profile-link"
+            title="Sign in with Discord">
+            <img
+              id="profileAvatar"
+              class="nav-avatar"
+              src="img/logo/output-onlinegiftools.gif"
+              alt="Profile" />
+          </a>
+        </div>
+      </div>
+    </header>
 
-		<main
-			id="main"
-			class="container">
-			<section class="hero">
-				<h1>Welcome to the Official Venus Website</h1>
-				<p>
-					Your ultimate hub for esports, community, and digital
-					services. Explore our world.
-				</p>
-			</section>
+    <main
+      id="main"
+      class="container">
+      <section class="hero">
+        <h1>Welcome to the Official Venus Website</h1>
+        <p>
+          Your ultimate hub for esports, community, and digital services.
+          Explore our world.
+        </p>
+      </section>
 
-			<section class="highlights">
-				<h3>Quick Links</h3>
-				<div class="card-grid">
-					<div class="card">
-						<a
-							href="https://discord.com/channels/1248299672901124187/1290229852657549313"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="card-link"
-							style="
-								text-decoration: none;
-								color: inherit;
-								display: block;
-							">
-							<h4>Latest Announcements</h4>
-							<p>
-								Stay updated with tournament schedules and
-								esports news. Click to join our announcements
-								channel.
-							</p>
-						</a>
-					</div>
-					<div class="card">
-						<h4>Esports Division</h4>
-						<p>
-							Explore our squads, managers, and leadership team.
-						</p>
-					</div>
-					<div class="card">
-						<h4>Join Tryouts</h4>
-						<p>
-							Register for tryouts and learn about requirements.
-						</p>
-					</div>
-					<div class="card">
-						<h4>Digital Services</h4>
-						<p>Discord design, tournament and scrims management.</p>
-					</div>
-					<div class="card">
-						<h4>Our Content Creators & Partners</h4>
-						<p>Content creators, streamers, and partners.</p>
-					</div>
-				</div>
-			</section>
-		</main>
-	</body>
+      <section class="highlights">
+        <h3>Quick Links</h3>
+        <div
+          class="flip-examples"
+          aria-label="Featured Quick Links">
+          <div class="card flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <div
+                  class="card-image"
+                  style="
+                    background-image: url(&quot;img/logo/output-onlinegiftools.gif&quot;);
+                  "></div>
+                <div class="card-title">Latest Announcements</div>
+              </div>
+              <div class="flip-back">
+                <div class="card-desc">
+                  Stay updated with tournament schedules and esports news. Join
+                  our Discord announcements channel.
+                </div>
+                <a
+                  class="btn"
+                  href="https://discord.com/channels/1248299672901124187/1290229852657549313"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Open</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="card flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <div
+                  class="card-image"
+                  style="
+                    background-image: url(&quot;img/logo/output-onlinegiftools.gif&quot;);
+                  "></div>
+                <div class="card-title">Esports Division</div>
+              </div>
+              <div class="flip-back">
+                <div class="card-desc">
+                  Explore our squads, managers, and leadership team.
+                </div>
+                <a
+                  class="btn"
+                  href="esports.html"
+                  >Explore</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="card flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <div
+                  class="card-image"
+                  style="
+                    background-image: url(&quot;img/logo/output-onlinegiftools.gif&quot;);
+                  "></div>
+                <div class="card-title">Digital Services</div>
+              </div>
+              <div class="flip-back">
+                <div class="card-desc">
+                  Discord design, tournament and scrims management — see our
+                  services page for details.
+                </div>
+                <a
+                  class="btn"
+                  href="digital-services.html"
+                  >View</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="developer"
+        class="developer-ad card"
+        aria-label="Developer">
+        <div class="developer-card-inner">
+          <img
+            src="https://github.com/jahid-ekbal.png"
+            alt="Jahid Ekbal"
+            class="developer-avatar" />
+          <div class="developer-meta">
+            <h4>Jahid Ekbal — Developer</h4>
+            <p class="developer-desc">
+              Full-stack / UI dev — build, maintain, and improve VENUS site.
+              Reach out for freelance or consulting.
+            </p>
+            <div class="developer-links">
+              <a
+                href="https://github.com/jahid-ekbal"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a
+              >
+              <a
+                href="https://www.linkedin.com/in/jahid-developer"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn</a
+              >
+              <a
+                href="https://www.facebook.com/jahidekbalmallick"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Facebook</a
+              >
+              <a
+                href="https://discord.gg/YUMJdPtBDR"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Discord</a
+              >
+            </div>
+          </div>
+          <button
+            class="developer-close"
+            aria-label="Dismiss developer card">
+            ✕
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Developer watermark (site-wide link / credit) -->
+    <a
+      class="dev-watermark"
+      href="https://github.com/jahid-ekbal"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Developer Jahid Ekbal"
+      >Dev: Jahid Ekbal</a
+    >
+
+    <script src="js/app.js"></script>
+  </body>
 </html>
