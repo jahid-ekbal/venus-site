@@ -564,6 +564,43 @@ async function initProfileButton() {
 }
 
 // Auto-run renderers when appropriate
+
+function initAutoHideNav() {
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+  let lastScroll = window.scrollY || 0;
+  let ticking = false;
+  const threshold = 8;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const current = window.scrollY || 0;
+          if (Math.abs(current - lastScroll) <= threshold) {
+            ticking = false;
+            return;
+          }
+          if (current > lastScroll && current > 100) {
+            header.classList.add("nav-hidden");
+          } else {
+            header.classList.remove("nav-hidden");
+          }
+          lastScroll = current;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    },
+    { passive: true },
+  );
+
+  // reveal nav when mouse near top
+  document.addEventListener("mousemove", (e) => {
+    if (e.clientY < 48) header.classList.remove("nav-hidden");
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // guilds page has container with id 'guildsGrid'
   renderGuildsList("guildsGrid");
@@ -628,6 +665,8 @@ document.addEventListener("DOMContentLoaded", () => {
       { capture: true },
     );
   })();
+  // initialize auto-hide behavior for header
+  initAutoHideNav();
 
   // Flame pointer trail
   (function initFlamePointer() {
