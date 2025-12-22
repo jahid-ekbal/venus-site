@@ -452,7 +452,7 @@ function renderPlayerProfileFromQuery() {
 					<li><strong>Wins:</strong> ${escapeHtml(player.wins)}</li>
 				</ul>
 			</div>
-			<div style="margin-top:12px"><a class="btn" href="guilds.html">Back to Guild</a></div>
+			<div style="margin-top:12px"><a class="btn" href="index.html">Back</a></div>
 		</div>
 	`;
 }

@@ -14,7 +14,6 @@ A small static website for VENUS — an esports organization. This repository co
 
 - [digital-services.html](digital-services.html) — services offered
 - [creators.html](creators.html) — creators & media
-- [guilds.html](guilds.html) — guild information
 - [tryouts.html](tryouts.html) — tryout details
 
 ## What I updated
