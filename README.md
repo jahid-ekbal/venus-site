@@ -53,7 +53,7 @@ I ran a basic static scan and checked CSS and JS modules used by the site; no sy
 
 1. Install server deps and run an audit:
 
-```powershell
+```powershell / cmd
 cd server
 npm install
 npm audit
